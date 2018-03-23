@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+
+  <title>7 Realtime communication</title>
+
+  <link rel="stylesheet" href="/css/main.css" />
+
+</head>
+
+<body background="night.jpg">
+
+  <h1>欢迎进入视频实时通信</h1>
+
+  <div id="videos">
+    <video id="localVideo" autoplay muted></video>
+    <video id="remoteVideo" autoplay></video>
+  </div>
+  <textarea rows="6" cols="40">
+  输入内容：
+ </textarea>
+  <p>
+  <button type="button">发送</button>
+  </p>
+  <!-- This file is automatically added/served when running "node index.js". -->
+  <script src="/socket.io/socket.io.js"></script>
+  <script src="js/lib/adapter.js"></script>
+  <script src="js/main.js"></script>
+
+</body>
+</html>
