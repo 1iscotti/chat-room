@@ -14,7 +14,7 @@ var pcConfig = {
   }]
 };
 
-// Set up audio and video regardless of what devices are present.
+// 设置音频和视频
 var sdpConstraints = {
   offerToReceiveAudio: true,
   offerToReceiveVideo: true
@@ -23,8 +23,6 @@ var sdpConstraints = {
 /////////////////////////////////////////////
 
 var room = 'foo';
-// Could prompt for room name:
-// room = prompt('Enter room name:');
 
 var socket = io.connect();
 
@@ -212,7 +210,6 @@ function requestTurn(turnURL) {
   }
   if (!turnExists) {
     console.log('Getting TURN server from ', turnURL);
-    // No TURN server. Get one from computeengineondemand.appspot.com:
     var xhr = new XMLHttpRequest();
     xhr.onreadystatechange = function() {
       if (xhr.readyState === 4 && xhr.status === 200) {
