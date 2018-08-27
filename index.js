@@ -13,7 +13,7 @@ var app = http.createServer(function(req, res) {
 var io = socketIO.listen(app);
 io.sockets.on('connection', function(socket) {
 
-  // convenience function to log server messages on the client
+  // 客户端记录服务器消息
   function log() {
     var array = ['Message from server:'];
     array.push.apply(array, arguments);
@@ -22,7 +22,6 @@ io.sockets.on('connection', function(socket) {
 
   socket.on('message', function(message) {
     log('Client said: ', message);
-    // for a real app, would be room-only (not broadcast)
     socket.broadcast.emit('message', message);
   });
 
